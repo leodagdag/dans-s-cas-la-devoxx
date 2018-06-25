@@ -47,8 +47,8 @@ class e1_classes extends HandsOnSuite {
   * Dans les cas où l'on a un paramètre immuable, on obtient naturellement un getter mais pas de setter
   */
   exercice("Le paramètre val définit un getter") {
-    val aClass = new ClassWithValParameter("name goes here")
-    aClass.name should be(__)
+    val aClass = new ClassWithValParameter("my class name")
+    aClass.name should be("my class name")
   }
 
   class ClassWithVarParameter(var description: String)
@@ -56,11 +56,11 @@ class e1_classes extends HandsOnSuite {
   * Dans les cas où l'on a un paramètre mutable, on obtient naturellement un getter et un setter
   */
   exercice("Le paramètre var définit un getter et un setter") {
-    val aClass = new ClassWithVarParameter("description goes here")
-    aClass.description should be(__)
+    val aClass = new ClassWithVarParameter("my desc")
+    aClass.description should be("my desc")
 
-    aClass.description = "new description"
-    aClass.description should be(__)
+    aClass.description = "new desc"
+    aClass.description should be("new desc")
   }
 
 
@@ -78,9 +78,9 @@ class e1_classes extends HandsOnSuite {
     val aClass = new ClassWithPrivateVarFields("name")
     // NOTE: aClass.name n'est pas accessible
 
-    aClass.toString should be(__)
+    aClass.toString should be("name")
 
     aClass.changeName("newname")
-    aClass.toString should be(__)
+    aClass.toString should be("newname")
   }
 }
